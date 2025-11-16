@@ -16,6 +16,10 @@ export const LeadForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const revenueOptions = [
+<<<<<<< HEAD
+=======
+    "Até R$20.000",
+>>>>>>> 760a3925bb378c7388534ece3f9469441b3cc26e
     "R$20.000 - R$50.000",
     "R$50.000 - R$100.000",
     "Mais de R$100.000",
@@ -49,6 +53,10 @@ export const LeadForm = () => {
       if (res.ok) {
         toast.success("Mensagem enviada com sucesso! 🎉");
 
+<<<<<<< HEAD
+=======
+        // Reset form
+>>>>>>> 760a3925bb378c7388534ece3f9469441b3cc26e
         setFormData({
           name: "",
           whatsapp: "",
@@ -145,7 +153,11 @@ export const LeadForm = () => {
 
               <div className="space-y-3">
                 <Label>Faturamento Médio Mensal *</Label>
+<<<<<<< HEAD
                 <div className="grid grid-cols-3 gap-3">
+=======
+                <div className="grid grid-cols-2 gap-3">
+>>>>>>> 760a3925bb378c7388534ece3f9469441b3cc26e
                   {revenueOptions.map((option) => (
                     <button
                       key={option}
