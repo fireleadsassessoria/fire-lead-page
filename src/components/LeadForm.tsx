@@ -5,6 +5,23 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Flame } from "lucide-react";
 
+// === Máscaras ===
+const maskWhatsapp = (value: string) => {
+  return value
+    .replace(/\D/g, "")
+    .replace(/^(\d{2})(\d)/, "($1) $2")
+    .replace(/(\d{5})(\d)/, "$1-$2")
+    .slice(0, 15);
+};
+
+const maskName = (value: string) => {
+  return value.replace(/[^A-Za-zÀ-ÿ\s]/g, "").replace(/\s{2,}/g, " ");
+};
+
+const maskInstagram = (value: string) => {
+  return "@" + value.replace(/@/g, "").replace(/[^a-zA-Z0-9._]/g, "");
+};
+
 export const LeadForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -92,6 +109,7 @@ export const LeadForm = () => {
 
           <div className="bg-card border border-border rounded-2xl p-8 shadow-[0_10px_60px_hsl(14_100%_57%_/_0.1)]">
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Nome */}
               <div className="space-y-2">
                 <Label htmlFor="name">Nome Completo *</Label>
                 <Input
@@ -102,13 +120,14 @@ export const LeadForm = () => {
                   onChange={(e) =>
                     setFormData({
                       ...formData,
-                      name: e.target.value,
+                      name: maskName(e.target.value),
                     })
                   }
                   className="bg-background border-border focus:border-primary"
                 />
               </div>
 
+              {/* WhatsApp */}
               <div className="space-y-2">
                 <Label htmlFor="whatsapp">WhatsApp *</Label>
                 <Input
@@ -119,13 +138,14 @@ export const LeadForm = () => {
                   onChange={(e) =>
                     setFormData({
                       ...formData,
-                      whatsapp: e.target.value,
+                      whatsapp: maskWhatsapp(e.target.value),
                     })
                   }
                   className="bg-background border-border focus:border-primary"
                 />
               </div>
 
+              {/* Instagram */}
               <div className="space-y-2">
                 <Label htmlFor="instagram">Instagram da Empresa *</Label>
                 <Input
@@ -136,13 +156,14 @@ export const LeadForm = () => {
                   onChange={(e) =>
                     setFormData({
                       ...formData,
-                      instagram: e.target.value,
+                      instagram: maskInstagram(e.target.value),
                     })
                   }
                   className="bg-background border-border focus:border-primary"
                 />
               </div>
 
+              {/* Faturamento */}
               <div className="space-y-3">
                 <Label>Faturamento Médio Mensal *</Label>
                 <div className="grid grid-cols-3 gap-3">
@@ -156,11 +177,10 @@ export const LeadForm = () => {
                           revenue: option,
                         })
                       }
-                      className={`p-4 rounded-lg border-2 transition-all duration-300 ${
-                        formData.revenue === option
+                      className={`p-4 rounded-lg border-2 transition-all duration-300 ${formData.revenue === option
                           ? "border-primary bg-primary/10 text-primary font-semibold"
                           : "border-border bg-background hover:border-primary/50"
-                      }`}
+                        }`}
                     >
                       {option}
                     </button>
@@ -168,6 +188,7 @@ export const LeadForm = () => {
                 </div>
               </div>
 
+              {/* Botão */}
               <Button
                 type="submit"
                 variant="hero"
