@@ -45,18 +45,18 @@ export const HowItWorks = () => {
 
         <div className="max-w-6xl mx-auto mb-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => <div key={index} className="relative">
+            {steps.map((step, index) => <div key={index} className="relative h-full">
                 {/* Connector line */}
                 {index < steps.length - 1 && index % 2 === 0 && <div className="hidden lg:block absolute top-20 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary to-transparent" />}
                 
-                <div className="bg-background border border-border rounded-lg p-6 hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(14_100%_57%_/_0.2)] relative z-10 mx-[5px] my-[26px]">
-                  <div className="flex flex-col items-center text-center">
+                <div className="bg-background border border-border rounded-lg p-6 hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(14_100%_57%_/_0.2)] relative z-10 h-full">
+                  <div className="flex flex-col items-center text-center h-full">
                     <span className="text-6xl font-bold text-primary/20 mb-4">{step.number}</span>
                     <div className="p-4 bg-primary/10 rounded-full mb-4">
                       <step.icon className="w-8 h-8 text-primary" />
                     </div>
                     <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                    <p className="text-muted-foreground">{step.description}</p>
+                    <p className="text-muted-foreground flex-grow">{step.description}</p>
                   </div>
                 </div>
               </div>)}
