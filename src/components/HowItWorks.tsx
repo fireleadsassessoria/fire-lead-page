@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ClipboardCheck, Rocket, TrendingUp } from "lucide-react";
+import { Target, Heart, ShoppingCart, RefreshCw } from "lucide-react";
 
 export const HowItWorks = () => {
   const scrollToForm = () => {
@@ -9,21 +9,27 @@ export const HowItWorks = () => {
   const steps = [
     {
       number: "01",
-      icon: ClipboardCheck,
-      title: "Diagnóstico Gratuito",
-      description: "Analisamos seu delivery e identificamos as principais oportunidades de crescimento."
+      icon: Target,
+      title: "Aquisição",
+      description: "Entendemos a persona do cliente, exibimos a marca para o público qualificado e adquirimos uma base de clientes."
     },
     {
       number: "02",
-      icon: Rocket,
-      title: "Estratégia Personalizada",
-      description: "Criamos um plano de ação sob medida para o seu negócio começar a vender mais."
+      icon: Heart,
+      title: "Relacionamento",
+      description: "Desenvolvemos relacionamento com a base adquirida, criamos conexão com os potenciais clientes e quebramos objeções."
     },
     {
       number: "03",
-      icon: TrendingUp,
-      title: "Resultados Reais",
-      description: "Você vê seu faturamento crescer enquanto cuidamos de todo o marketing digital."
+      icon: ShoppingCart,
+      title: "Venda",
+      description: "Definimos a jornada de compra, geramos a oportunidade de vendas e concluímos a venda."
+    },
+    {
+      number: "04",
+      icon: RefreshCw,
+      title: "Retenção",
+      description: "Geramos recorrência de compra, focamos na experiência do cliente e expomos pontos atrativos."
     }
   ];
 
@@ -37,24 +43,23 @@ export const HowItWorks = () => {
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Como Funciona a{" "}
-            <span className="text-primary">Metodologia FireLeads</span>
+            <span className="text-primary">Método Fire</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Um processo simples e eficaz que já transformou dezenas de deliverys
+            Um processo completo que transforma seu delivery em uma máquina de vendas
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto mb-12">
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <div 
                 key={index}
                 className="relative"
               >
                 {/* Connector line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-20 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary to-transparent" />
+                {index < steps.length - 1 && index % 2 === 0 && (
+                  <div className="hidden lg:block absolute top-20 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary to-transparent" />
                 )}
                 
                 <div className="bg-background border border-border rounded-lg p-6 hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(14_100%_57%_/_0.2)] relative z-10">
