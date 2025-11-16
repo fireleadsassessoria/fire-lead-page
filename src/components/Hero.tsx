@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/fireleads-logo.png";
-
 export const Hero = () => {
   const scrollToForm = () => {
-    document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("form")?.scrollIntoView({
+      behavior: "smooth"
+    });
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background" />
       <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
@@ -16,11 +15,7 @@ export const Hero = () => {
       <div className="container relative z-10 mx-auto px-4 py-20">
         <div className="flex flex-col items-center text-center space-y-8 animate-fade-in">
           {/* Logo */}
-          <img 
-            src={logo} 
-            alt="FireLeads Logo" 
-            className="w-[600px] h-auto mb-4 drop-shadow-[0_0_40px_rgba(211,47,47,0.6)]"
-          />
+          <img src={logo} alt="FireLeads Logo" className="w-[600px] h-auto mb-4 drop-shadow-[0_0_40px_rgba(211,47,47,0.6)]" />
           
           {/* Headline */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight max-w-4xl">
@@ -32,26 +27,15 @@ export const Hero = () => {
           
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
-            Assessoria especializada em marketing para gastronomia. 
-            Aumente seu faturamento em até 300% com estratégias comprovadas.
+            Assessoria especializada em marketing para gastronomia. Aumente seu faturamento no cardápio próprio e salão com estratégias comprovadas.
           </p>
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button 
-              variant="hero" 
-              size="lg"
-              onClick={scrollToForm}
-              className="min-w-[200px]"
-            >
+            <Button variant="hero" size="lg" onClick={scrollToForm} className="min-w-[200px]">
               Quero Crescer Agora
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={scrollToForm}
-              className="min-w-[200px]"
-            >
+            <Button variant="outline" size="lg" onClick={scrollToForm} className="min-w-[200px]">
               Saber Mais
             </Button>
           </div>
@@ -75,6 +59,5 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
