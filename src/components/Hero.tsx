@@ -13,9 +13,9 @@ export const Hero = () => {
       <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[120px]" />
       
       <div className="container relative z-10 mx-auto px-4 py-20">
-        <div className="flex flex-col items-center text-center space-y-8 animate-fade-in">
+        <div className="flex flex-col items-center text-center space-y-6 animate-fade-in">
           {/* Logo */}
-          <img src={logo} alt="FireLeads Logo" className="w-[600px] h-auto mb-4 drop-shadow-[0_0_40px_rgba(211,47,47,0.6)]" />
+          <img src={logo} alt="FireLeads Logo" className="w-[350px] md:w-[400px] h-auto mb-2 drop-shadow-[0_0_40px_rgba(211,47,47,0.6)]" />
           
           {/* Headline */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight max-w-4xl">
